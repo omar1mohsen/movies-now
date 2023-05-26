@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+*{
+    margin: 0;box-sizing: border-box;padding: 0;
+}
+
+  :root{
+    --main-color:#FF0000;
+    --bg-color:#141414;
+    --text-color:white;
+    --main-animate:.4s;
+
+  }
+  
+  /* start-body&header */
+ 
+  @layer base {
+    body {
+      @apply bg-black  text-white !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-red-600 ;
+      font-family: 'Roboto' Arial, Helvetica, sans-serif;
+    }
+  
+    header {
+      @apply fixed top-0 z-[100] flex w-full justify-between  px-4 py-2 transition-all duration-[--main-animate] lg:px-10 lg:py-6;
+    }
+  }
+  
+  @layer components { 
+    .headerLink {
+      @apply cursor-pointer text-base  text-[var(--text-color)] transition duration-[.4s] hover:text-[var(--main-color)];
+    }
+    
+  }
+   /* end-body&header */
+
+/* start-hero */
+.hero-btn{
+  @apply flex items-center gap-x-2 px-5 py-1.5 rounded text-sm font-semibold transition 
+  hover:opacity-75 md:py-2.5 md:px-8 md:text-lg uppercase
+}
+  .hero-image{
+      width: 100%;
+      height: 90vh;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero::before{
+      content: '';
+      width: 100%;height: 90vh;
+      position: absolute;left: 0;top: 0;
+      background-color: #14141483;
+      z-index: -5 !important;
+    }
+    /* end-hero */
+
+     /* start-row */
+     .row-btn{
+      @apply absolute top-2 bottom-0 z-50 m-auto w-6 h-6 cursor-pointer text-white/75 hover:text-white transition hover:scale-125 opacity-0 group-hover:opacity-100
+     }
+     .card-image{
+      object-fit: fill;
+      @apply rounded-sm object-cover md:rounded  h-28 min-w-[160px] md:h-36 md:min-w-[260px]
+     }
+     /* end-row */
+
+     /*pages style*/
+     .page-image::before{
+      content: '';
+      width: 100%;height: 100%;
+      position: absolute;left: 0;top: 0;
+      z-index: -5 !important;
+      @apply bg-black/60;
+     }
+
+     /*start modal */
+     .modal-btn {
+      @apply rounded-full flex items-center justify-center w-11 h-11 border-2 border-[gray] bg-[#2a2a2a] transition hover:bg-white/10 hover:border-white
+     }
+     .message { 
+      @apply w-[100vw]  h-[100vh] fixed top-0 left-0 flex justify-center items-center  bg-black/75;
+     }
+     /*end modal */
