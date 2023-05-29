@@ -104,14 +104,14 @@ const Modal = () => {
       <>
         <button
           onClick={handleClose}
-          className="modal-btn absolute top-6 right-10 h-9 w-9 !z-40 border-none bg-[#181818] hover:bg-[#181818] "
+          className="modal-btn absolute top-4 right-6 md:top-6 md:right-10 h-6 w-6 md:h-9 md:w-9 !z-40 border-none bg-[#181818] hover:bg-[#181818] "
         >
           <RxCross1 className="w-6 h-6" />
         </button>
 
-        <div className="relative pt-[56.25%]">
+        <div className="relative pt-[100%] md:pt-[56.25%]">
           {loading ? (
-            <div className="w-[100%] h-[100%] absolute top-0 left-0 flex justify-center items-center">
+            <div className="w-[100%] md:h-[100%] h-[10vh]  absolute top-0 left-0 flex justify-center items-center">
               <CircularProgress className="w-10 h-10 block" color="secondary" />
             </div>
           ) : (
@@ -132,7 +132,7 @@ const Modal = () => {
 
           <div className="absolute bottom-10  flex w-full items-center justify-between px-10">
             <div className="flex space-x-3 left-btns">
-              <button className="flex gap-x-2 items-center rounded bg-white px-8 sm:px-4 text-black text-xl font-bold transition hover:bg-[#e6e6e6]">
+              <button className=" flex gap-x-2 items-center rounded bg-white md:px-8 px-4 text-black md:text-xl font-bold transition hover:bg-[#e6e6e6]">
                 <FaPlay className="h-3 w-3 text-black" />
                 Play
               </button>
@@ -193,7 +193,7 @@ const Modal = () => {
               </div>
             </div>
             <div className="flex flex-col gap-x-16 gap-y-4 font-light md:flex-row">
-              <p className="w-5/6">{movie?.overview}</p>
+              <p className="md:w-5/6">{movie?.overview ? movie.overview : 'No Data To Show'}</p>
               <div className="flex flex-col space-y-3 text-sm">
                 <div>
                   <span className="text-[gray]">Genres:</span>{" "}
