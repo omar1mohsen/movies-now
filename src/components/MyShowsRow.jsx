@@ -45,7 +45,7 @@ const MyShowsRow = ({ title }) => {
   return (
     <>
       {movies?.length === 0 ? null : (
-        <div className="h-40 space-y-0.5  md:pt-4 lg:pt-0 md:space-y-2">
+        <div className="h-40 space-y-0.5  md:pt-4 lg:pt-0 md:space-y-2 ">
           <h2 className="w-56 cursor-pointer text-sm font-semibold md:text-2xl transition duration-[var(--main-animate)] text-[#e5e5e5] hover:text-[var(--text-color)]">
             {title}
           </h2>

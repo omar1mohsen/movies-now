@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { FaCross, FaHeart, FaRegHeart } from "react-icons/fa";
+import React, {  useState } from "react";
+import {  FaHeart, FaRegHeart } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
 import { UserAuth } from "../data/authContext/authContext";
 import { db } from "../Firebase/firebase";
-import { doc, updateDoc, arrayUnion, onSnapshot } from "firebase/firestore";
+import { doc, updateDoc, arrayUnion } from "firebase/firestore";
 import { useRecoilState } from "recoil";
 import { movieState, showState } from "../Atom/model";
 import Message from "./Message";
